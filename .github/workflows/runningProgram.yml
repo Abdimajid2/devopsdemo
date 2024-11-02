@@ -3,16 +3,15 @@ name: Build project
 on:
   push:
     paths:
-      -'**/Progam.cs'
-
-jobs:
-  build-project:
+      - '**/Program.cs'
+jobs: 
+  build-project: 
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: setup .net
+    - name: Setup .net
       uses: actions/setup-dotnet@v4.1.0
-      with:
+      with: 
         dotnet-version: 8
-    - name: build the project
-      run: cd devopsdemo, dotnet build
+    - name: Build project
+      run: cd devopsdemo; dotnet build
