@@ -1,3 +1,4 @@
+#this workflow will get repo and branch name
 name: devopsdemo
 
 on: workflow_dispatch
@@ -12,3 +13,11 @@ jobs:
         REPO_NAME=${GITHUB_REPOSITORY##*/}
         echo "Repository Name: $REPO_NAME"
       
+  print-currentbranch:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: get current branch
+      run: |
+        Current_branchName=@{GITHUB_REF_NAME}
+        echo "branch name: $Current_branchName"
