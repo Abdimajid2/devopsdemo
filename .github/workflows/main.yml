@@ -19,5 +19,5 @@ jobs:
     - uses: actions/checkout@v4
     - name: get current branch
       run: |
-        Current_branchName=@{GITHUB_REF_NAME}
+        Current_branchName=${GITHUB_REF_NAME}
         echo "branch name: $Current_branchName"
