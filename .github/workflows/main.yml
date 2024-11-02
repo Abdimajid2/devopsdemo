@@ -2,13 +2,13 @@ name: devopsdemo
 
 on: workflow_dispatch
 
-jobs:
+jobs: 
   print-reponame:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: get the repo name
+    - name: Get repository name only
       run: |
-        REPO_NAME=${GITHUB_REPOSITORY##/}
+        REPO_NAME=${GITHUB_REPOSITORY##*/}
         echo "Repository Name: $REPO_NAME"
       
