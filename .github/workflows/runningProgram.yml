@@ -14,4 +14,4 @@ jobs:
       with: 
         dotnet-version: 8
     - name: Build project
-      run: cd devopsdemo; dotnet build
+      run: cd Program.cs; dotnet build
